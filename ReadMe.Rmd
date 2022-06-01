@@ -1,10 +1,8 @@
 ---
 title: "Diamond sizes"
-author: "Uma Mahesh Dheeravath"
-date: "2022"
-output:
-  pdf_document: default
-  word_document: default
+author: Uma Mahesh
+date: 2021
+output: word_document
 ---
 
 ``` {r, echo = FALSE}
@@ -46,4 +44,15 @@ smaller %>%
 
 ```{r, echo = FALSE}
 #Once all of my code has been written, I click on the Knit button in the tool bar above to produce my document.
+```
+
+```{r}
+library(skimr)
+skim(diamonds)
+```
+```{r}
+ggplot(data=diamonds) + 
+  geom_bar(mapping = aes(x =cut, fill =clarity))
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x=cut, fill=color))
 ```
